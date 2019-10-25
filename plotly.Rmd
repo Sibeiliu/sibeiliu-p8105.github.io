@@ -1,0 +1,70 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Sibei Liu's awesome website
+
+
+# add some link
+I use [google](google.com)
+
+## add image
+here mycat
+![](image.jpg)
+
+### delete readme to directly input sibeiliu-p8105.github.io  in browser
+
+
+
+learn about e [here](nwe-about-me.html)
+
+alknljrenkv
+
+```{r}
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+## some plots
+
+```{r}
+data("nyc_airbnb")
+```
+
+```{r}
+set.seed(1)
+
+data(nyc_airbnb)
+nyc_airbnb = 
+  nyc_airbnb %>% 
+  mutate(rating = review_scores_location / 2) %>%
+  select(
+    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %>%
+  filter(
+    !is.na(rating), 
+    neighbourhood_group == "Manhattan",
+    room_type == "Entire home/apt",
+    price %in% 100:500)  %>% 
+  sample_n(5000)
+```
+
+```{r}
+nyc_airbnb %>% 
+   plot_ly(
+    x = ~lat, y = ~long, type = "scatter", mode = "markers",
+    color = ~price, alpha = 0.5)
+```
+
+```{r}
+ nyc_airbnb %>% mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box",
+          colors = "Set2")
+```
+

@@ -4,21 +4,25 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
-# This is Jeff's awesome website
+# This is Sibei Liu's awesome website
 
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
+
 # add some link
-I use [google](google.com)
+I use [google](https://www.google.com/) to serach what i did not know
 
-## add image
-here mycat
+## add another link
+Here is another link [this](https://www.baidu.com/)
+
+# add image
+my screen shot
 ![](image.jpg)
 
+#delete readme to directly input sibeiliu-p8105.github.io  in browser
 
+learn about [here](new-about-me.html)
 
-
+alknljrenkv
 
 
