@@ -311,7 +311,25 @@ $(document).ready(function () {
 </div>
 
 
+<pre class="r"><code>data(&quot;nyc_airbnb&quot;)</code></pre>
+<pre class="r"><code>library(tidyverse)
+library(viridis)
+library(p8105.datasets)
 
+library(plotly)</code></pre>
+<pre class="r"><code>set.seed(1)
+
+nyc_airbnb = 
+  nyc_airbnb %&gt;% 
+  mutate(rating = review_scores_location / 2) %&gt;%
+  select(
+    neighbourhood_group, neighbourhood, rating, price, room_type, lat, long) %&gt;%
+  filter(
+    !is.na(rating), 
+    neighbourhood_group == &quot;Manhattan&quot;,
+    room_type == &quot;Entire home/apt&quot;,
+    price %in% 100:500)  %&gt;% 
+  sample_n(5000)</code></pre>
 
 
 
