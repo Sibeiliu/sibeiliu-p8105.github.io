@@ -2,7 +2,9 @@
 title: "plotly examples"
 author: "Sibei Liu"
 date: "2019/10/17"
-output: html_document
+output:
+  html_document:
+    code_folding: hide
 ---
 
 ```{r}
