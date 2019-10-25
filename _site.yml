@@ -4,9 +4,9 @@ navbar:
   title: "Home"
   right:
     - text: "About"
-      href: about.html
-    - text: "Plotly_self"
-      href: Plotly_self.html  
+      href: new-about-me.html
+    - text: "plotly_self"
+      href: plotly_self.html  
     - icon: fa-envelope fa-lg
       href: mailto:<you@youremail.com>
     - icon: fa-github fa-lg
